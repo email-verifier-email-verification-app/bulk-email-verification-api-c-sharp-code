@@ -1,0 +1,6 @@
+var client = new RestClient("https://api.evasrv.com/batch_process/");
+var request = new RestRequest(Method.POST);
+request.AddHeader("content-type", "application/x-www-form-urlencoded");
+request.AddHeader("cache-control", "no-cache");
+request.AddParameter("application/x-www-form-urlencoded", "user_API_token=YOUR-EV-API-TOKEN&role_address=true&bad_address=true&free_email=true&disposable=true&typo_suggest=true&source_file=https%3A%2F%2Fwww.domain.com%2Fmy-mailing-list.csv", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
